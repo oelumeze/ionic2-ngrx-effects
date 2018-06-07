@@ -1,0 +1,19 @@
+<ion-header>  
+  <ion-navbar>
+    <ion-title>Users</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="showDetail()">
+          <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">  
+      <ion-list inset>
+          <ion-item *ngFor="let user of users | async" (click)="showDetail(user)">
+            <div item-left>{{ user.firstName }}</div>
+            <div item-right>{{ user.lastName }} ({{ user.email }})</div>
+          </ion-item>
+       </ion-list>
+</ion-content>
